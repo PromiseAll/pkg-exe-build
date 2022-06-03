@@ -30,7 +30,7 @@ module.exports = {
 
 # 打包
 
-运行 `npx exeBuild`
+执行 `npx pkg-exe-build`
 
 ```cmd
 > 下载 二进制文件

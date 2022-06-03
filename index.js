@@ -50,7 +50,7 @@ async function build() {
   // console.log(vi.data.strings);
   vi.outputToResourceEntries(res.entries);
   console.log('> 设置 Icon');
-  let iconFile = ResEdit.Data.IconFile.from(fs.readFileSync(path.join(__dirname, icon)));
+  let iconFile = ResEdit.Data.IconFile.from(fs.readFileSync(path.join(process.cwd(), icon)));
   ResEdit.Resource.IconGroupEntry.replaceIconsForResource(
     res.entries,
     1,
