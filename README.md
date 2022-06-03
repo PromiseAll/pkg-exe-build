@@ -2,6 +2,10 @@
 
 解决 pkg 打包不能修改 exe 的问题
 
+# 安装
+
+执行 `npm i pkg-exe-build -D`
+
 # 配置
 
 在当前项目目录下创建`exeBuild.config.js`配置文件
