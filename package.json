@@ -1,0 +1,31 @@
+{
+  "name": "pkg-exe-build",
+  "version": "1.0.0",
+  "description": "pkg打包带版本图标信息的exe",
+  "main": "index.js",
+  "bin": {
+    "exeBuild": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PromiseAll/pkg-exe-build.git"
+  },
+  "keywords": [
+    "pkg",
+    "exe",
+    "build"
+  ],
+  "author": "PromiseAll",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PromiseAll/pkg-exe-build/issues"
+  },
+  "homepage": "https://github.com/PromiseAll/pkg-exe-build#readme",
+  "dependencies": {
+    "pkg": "^5.7.0",
+    "resedit": "^1.6.0"
+  }
+}
