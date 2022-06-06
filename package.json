@@ -1,6 +1,6 @@
 {
   "name": "pkg-exe-build",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Configure Windows PKG package generated exe file icon and detailed information",
   "main": "index.js",
   "bin": {
