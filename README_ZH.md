@@ -27,7 +27,7 @@ module.exports = {
   version: "1.0.0",
   copyright: "版权信息",
   pkg: {
-    // 参考pkg 的配置文档 https://github.com/vercel/pkg-fetch
+    // 参考pkg 的配置文档 https://github.com/vercel/pkg
     targets: ["node16-win-x64"], //注意只能配置 win 且 只能一个
     outputPath: "dist", // 输出目录
     assets: ["node_modules/**/*"], // 资源目录
