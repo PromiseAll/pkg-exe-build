@@ -1,6 +1,7 @@
 # pkg-exe-build
 
-[中文文档]("")
+[中文文档]("https://github.com/PromiseAll/pkg-exe-build/blob/main/README_ZH.md")
+
 Exe icon and version information cannot be modified in PKG packaging
 
 
