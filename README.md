@@ -1,6 +1,8 @@
 # pkg-exe-build
 
+[中文文档]("")
 Exe icon and version information cannot be modified in PKG packaging
+
 
 # install
 
