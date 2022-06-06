@@ -1,6 +1,6 @@
 # pkg-exe-build
 
-配置 windows 平台下 pkg 打包 生成 exe文件的图标及详细信息
+配置 windows 平台下 pkg 打包 生成 exe 文件的图标及详细信息
 
 # 安装
 
@@ -10,11 +10,16 @@
 
 执行 `npx pkg-exe-build init` 初始化
 
+```cmd
+> New Build Config File: exeBuild.config.js
+> New Icon File: app.ico
+```
+
 会在当前项目目录下创建`exeBuild.config.js`配置文件
 
 ```js
 module.exports = {
-  file: "app.js", // 入口
+  file: "app.js", // 入口文件
   icon: "favicon.ico", // 图标
   name: "name", // 名称
   description: "描述信息",

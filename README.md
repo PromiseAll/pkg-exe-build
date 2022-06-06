@@ -4,7 +4,6 @@
 
 Exe icon and version information cannot be modified in PKG packaging
 
-
 # install
 
 run `npm i pkg-exe-build -D`
@@ -13,11 +12,16 @@ run `npm i pkg-exe-build -D`
 
 run `npx pkg-exe-build init`
 
+```cmd
+> New Build Config File: exeBuild.config.js
+> New Icon File: app.ico
+```
+
 The installation creates the 'exebuild.config. js' configuration file in the current project directory
 
 ```js
 module.exports = {
-  file: "app.js",
+  file: "app.js", // entryFile
   icon: "app.ico",
   name: "name",
   description: "description",

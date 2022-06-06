@@ -76,17 +76,17 @@ function init() {
   const { copyFileSync, accessSync } = require("fs")
   try {
     accessSync(`${process.cwd()}/exeBuild.config.js`)
-    console.log(`Build Config File: ${yellow('exeBuild.config.js')}`);
+    console.log(`> Build Config File: ${yellow('exeBuild.config.js')}`);
   } catch (err) {
     copyFileSync(`${__dirname}/exeBuild.config.js`, `${process.cwd()}/exeBuild.config.js`)
-    console.log(`New Build Config File: ${yellow('exeBuild.config.js')}`);
+    console.log(`> New Build Config File: ${yellow('exeBuild.config.js')}`);
   }
   try {
     accessSync(`${process.cwd()}/app.ico`)
-    console.log(`Icon File: ${yellow('app.ico')}`);
+    console.log(`> Icon File: ${yellow('app.ico')}`);
   } catch (err) {
     copyFileSync(`${__dirname}/app.ico`, `${process.cwd()}/app.ico`)
-    console.log(`New Icon File: ${yellow('app.ico')}`);
+    console.log(`> New Icon File: ${yellow('app.ico')}`);
   }
 }
 

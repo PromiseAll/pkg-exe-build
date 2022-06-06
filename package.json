@@ -1,14 +1,12 @@
 {
   "name": "pkg-exe-build",
-  "version": "1.0.9",
+  "version": "1.0.11",
   "description": "Configure Windows PKG package generated exe file icon and detailed information",
   "main": "index.js",
   "bin": {
     "pkg-exe-build": "index.js"
   },
-  "scripts": {
-
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/PromiseAll/pkg-exe-build.git"
