@@ -2,7 +2,7 @@
 
 [中文文档](https://github.com/PromiseAll/pkg-exe-build/blob/main/README_ZH.md)
 
-Exe icon and version information cannot be modified in PKG packaging
+Configure Windows PKG package generated exe file icon and detailed information
 
 # install
 
