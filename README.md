@@ -29,7 +29,7 @@ module.exports = {
   version: "1.0.0",
   copyright: "copyright",
   pkg: {
-    // hhttps://github.com/vercel/pkg
+    // https://github.com/vercel/pkg
     targets: ["node16-win-x64"],
     outputPath: "dist",
     assets: ["node_modules/**/*"],
