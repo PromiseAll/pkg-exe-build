@@ -4,13 +4,15 @@ const { exec } = require('pkg');
 const ResEdit = require('resedit');
 const path = require("path");
 const fs = require('fs');
+const { yellow, blue, green } = require("chalk")
+
 
 const { pkg, icon, version, description, company, name, copyright, file } = require(`${process.cwd()}/exeBuild.config`);
 const targets = pkg.targets[0].split('-')
 
 async function build() {
   // 获取下载文件路径
-  console.log("> 下载 二进制文件");
+  console.log(`${yellow("> Download Binaries")}`);
   let fetchedPath = await need(
     {
       nodeRange: targets[0], //node 版本
@@ -21,23 +23,23 @@ async function build() {
       dryRun: false, //输出类型 ['exists', 'fetched', 'built']
       // output: 'test'  // 自定义路劲
     })
-  console.log('> 读取 EXE');
+  console.log(`${yellow("> Read EXE")}`);
   let data = fs.readFileSync(fetchedPath);
   let exe = ResEdit.NtExecutable.from(data);
   let res = ResEdit.NtExecutableResource.from(exe);
   let viList = ResEdit.Resource.VersionInfo.fromEntries(res.entries);
-  // console.log(viList[0].data.strings);
+
   let vi = viList[0];
   const theversion = `${version}.0`.split(".");
-  // console.log('删除 OriginalFilename');
+
   vi.removeStringValue({ lang: 1033, codepage: 1200 }, 'OriginalFilename');
-  // console.log('删除 InternalName');
+
   vi.removeStringValue({ lang: 1033, codepage: 1200 }, 'InternalName');
-  console.log('> 设置 Product Version');
+  console.log(`${yellow("> Set Product Version")}`);
   vi.setProductVersion(theversion[0], theversion[1], theversion[2], theversion[3], 1033);
-  console.log('> 设置 File Version');
+  console.log(`${yellow("> Set File Version")}`);
   vi.setFileVersion(theversion[0], theversion[1], theversion[2], theversion[3], 1033);
-  console.log('> 设置 File Info');
+  console.log(`${yellow("> Set File Info")}`);
   vi.setStringValues(
     { lang: 1033, codepage: 1200 },
     {
@@ -47,9 +49,9 @@ async function build() {
       LegalCopyright: copyright
     }
   );
-  // console.log(vi.data.strings);
+
   vi.outputToResourceEntries(res.entries);
-  console.log('> 设置 Icon');
+  console.log(`${yellow("> Set Icon")}`);
   let iconFile = ResEdit.Data.IconFile.from(fs.readFileSync(path.join(process.cwd(), icon)));
   ResEdit.Resource.IconGroupEntry.replaceIconsForResource(
     res.entries,
@@ -58,12 +60,13 @@ async function build() {
     iconFile.icons.map((item) => item.data)
   );
   res.outputResource(exe);
-  console.log('> 生成 EXE');
+  console.log(`${blue("> Generate EXE")}`);
   let newBinary = exe.generate();
-  console.log('> 保存 EXE');
+  console.log(`${blue("> Save EXE")}`);
+
   const builtPath = fetchedPath.replace('fetched', 'built')
   fs.writeFileSync(builtPath, Buffer.from(newBinary));
-  console.log('> Bundling App');
+  console.log(`${green("> Bundling App")}`);
   await exec(['--build', '--compress', '--config', `${process.cwd()}/exeBuild.config.js`, `${file}`]);
 }
 
