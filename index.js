@@ -4,7 +4,7 @@ const { exec } = require('pkg');
 const ResEdit = require('resedit');
 const path = require("path");
 const fs = require('fs');
-const { yellow, blue, green } = require("chalk")
+const { yellow, blue, green, red } = require("chalk")
 
 
 const { pkg, icon, version, description, company, name, copyright, file } = require(`${process.cwd()}/exeBuild.config`);
@@ -70,4 +70,36 @@ async function build() {
   await exec(['--build', '--compress', '--config', `${process.cwd()}/exeBuild.config.js`, `${file}`]);
 }
 
-build()
+
+function init() {
+  const { copyFileSync, accessSync } = require("fs")
+  try {
+    accessSync(`${process.cwd()}/exeBuild.config.js`)
+    console.log(`Build Config File: ${yellow('exeBuild.config.js')}`);
+  } catch (err) {
+    copyFileSync('./exeBuild.config.js', `${process.cwd()}/exeBuild.config.js`)
+    console.log(`New Build Config File: ${yellow('exeBuild.config.js')}`);
+  }
+  try {
+    accessSync(`${process.cwd()}/app.ico`)
+    console.log(`Icon File: ${yellow('app.ico')}`);
+  } catch (err) {
+    copyFileSync('./app.ico', `${process.cwd()}/app.ico`)
+    console.log(`New Icon File: ${yellow('app.ico')}`);
+  }
+}
+
+const args = process.argv.slice(2);
+let type = args[0]
+
+switch (type) {
+  case 'init':
+    init()
+    break;
+  case 'build':
+    build()
+    break;
+  default:
+    console.log(`Please Run The Command ${blue("pkg-exe-build init")} or ${blue("pkg-exe-build build")}`);
+    break;
+}

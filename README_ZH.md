@@ -8,7 +8,9 @@
 
 # 配置
 
-安装会在当前项目目录下创建`exeBuild.config.js`配置文件
+执行 `npx pkg-exe-build init` 初始化
+
+会在当前项目目录下创建`exeBuild.config.js`配置文件
 
 ```js
 module.exports = {
@@ -30,7 +32,7 @@ module.exports = {
 
 # 打包
 
-执行 `npx pkg-exe-build` 进行打包
+执行 `npx pkg-exe-build build` 进行打包
 
 ```cmd
 > Download Binaries

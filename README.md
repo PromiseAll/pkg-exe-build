@@ -1,6 +1,6 @@
 # pkg-exe-build
 
-[中文文档]("https://github.com/PromiseAll/pkg-exe-build/blob/main/README_ZH.md")
+[中文文档](https://github.com/PromiseAll/pkg-exe-build/blob/main/README_ZH.md)
 
 Exe icon and version information cannot be modified in PKG packaging
 
@@ -10,6 +10,8 @@ Exe icon and version information cannot be modified in PKG packaging
 run `npm i pkg-exe-build -D`
 
 # config
+
+run `npx pkg-exe-build init`
 
 The installation creates the 'exebuild.config. js' configuration file in the current project directory
 
@@ -33,7 +35,7 @@ module.exports = {
 
 # build
 
-run `npx pkg-exe-build`
+run `npx pkg-exe-build build`
 
 ```cmd
 > Download Binaries
