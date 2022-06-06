@@ -7,10 +7,11 @@ const fs = require('fs');
 const { yellow, blue, green, red } = require("chalk")
 
 
-const { pkg, icon, version, description, company, name, copyright, file } = require(`${process.cwd()}/exeBuild.config`);
-const targets = pkg.targets[0].split('-')
+
 
 async function build() {
+  const { pkg, icon, version, description, company, name, copyright, file } = require(`${process.cwd()}/exeBuild.config`);
+  const targets = pkg.targets[0].split('-')
   // 获取下载文件路径
   console.log(`${yellow("> Download Binaries")}`);
   let fetchedPath = await need(
