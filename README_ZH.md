@@ -1,6 +1,6 @@
 # pkg-exe-build
 
-配置 windows 平台下 pkg 打包 生成 exe 文件的图标及详细信息
+windows 平台下 配置图标及详细信息 使用 pkg 打包 生成 exe 文件
 
 # 安装
 
