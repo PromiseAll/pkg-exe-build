@@ -68,7 +68,7 @@ async function build() {
   const builtPath = fetchedPath.replace('fetched', 'built')
   fs.writeFileSync(builtPath, Buffer.from(newBinary));
   console.log(`${green("> Bundling App")}`);
-  await exec(['--build', '--compress', '--config', `${process.cwd()}/exeBuild.config.js`, `${file}`]);
+  await exec(['--build', '--compress', 'Brotli', '--config', `${process.cwd()}/exeBuild.config.js`, `${file}`]);
 }
 
 
