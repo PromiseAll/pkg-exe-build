@@ -9,6 +9,6 @@ module.exports = {
   pkg: {
     targets: ["node16-win-x64"],
     outputPath: "dist",
-    assets: ["node_modules/**/*"]
+    // assets: ["node_modules/**/*"]
   }
 };

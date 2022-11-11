@@ -10,7 +10,7 @@ const { yellow, blue, green, red } = require("chalk")
 
 
 async function build() {
-  const { pkg, icon, version, description, company, name, copyright, file } = require(`${process.cwd()}/exeBuild.config`);
+  const { pkg, icon, version, description, company, name, copyright, file, options } = require(`${process.cwd()}/exeBuild.config`);
   const targets = pkg.targets[0].split('-')
   // 获取下载文件路径
   console.log(`${yellow("> Download Binaries")}`);
@@ -68,7 +68,7 @@ async function build() {
   const builtPath = fetchedPath.replace('fetched', 'built')
   fs.writeFileSync(builtPath, Buffer.from(newBinary));
   console.log(`${green("> Bundling App")}`);
-  await exec(['--build', '--compress', 'Brotli', '--config', `${process.cwd()}/exeBuild.config.js`, `${file}`]);
+  await exec(['--build', '--compress', 'Brotli', '--options', options, '--config', `${process.cwd()}/exeBuild.config.js`, `${file}`]);
 }
 
 
