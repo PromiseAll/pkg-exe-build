@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-const { need } = require('pkg-fetch');
-const { exec } = require('pkg');
+const { need } = require('@yao-pkg/pkg-fetch');
+import { exec } from '@yao-pkg/pkg';
 const ResEdit = require('resedit');
 const path = require("path");
 const fs = require('fs');
