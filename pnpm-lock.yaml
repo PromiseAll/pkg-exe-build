@@ -11,16 +11,13 @@ importers:
       '@yao-pkg/pkg':
         specifier: ^6.6.0
         version: 6.6.0
-    devDependencies:
-      '@types/commander':
-        specifier: ^2.12.5
-        version: 2.12.5
-      '@types/node':
-        specifier: ^24.2.1
-        version: 24.2.1
       commander:
         specifier: ^14.0.0
         version: 14.0.0
+    devDependencies:
+      '@types/node':
+        specifier: ^24.2.1
+        version: 24.2.1
       resedit:
         specifier: ^2.0.3
         version: 2.0.3
@@ -359,10 +356,6 @@ packages:
     resolution: {integrity: sha512-CvUo2ixeIQGtF6WvuB87XWqPQkoFAFqW+HUo/WzHwuHDvIwZCtjdWXoYCcr06iKGydiqTclC4jU/TNObC/xKZg==}
     cpu: [x64]
     os: [win32]
-
-  '@types/commander@2.12.5':
-    resolution: {integrity: sha512-YXGZ/rz+s57VbzcvEV9fUoXeJlBt5HaKu5iUheiIWNsJs23bz6AnRuRiZBRVBLYyPnixNvVnuzM5pSaxr8Yp/g==}
-    deprecated: This is a stub types definition. commander provides its own type definitions, so you do not need this installed.
 
   '@types/estree@1.0.8':
     resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
@@ -1272,10 +1265,6 @@ snapshots:
 
   '@rollup/rollup-win32-x64-msvc@4.46.2':
     optional: true
-
-  '@types/commander@2.12.5':
-    dependencies:
-      commander: 14.0.0
 
   '@types/estree@1.0.8': {}
 
