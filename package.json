@@ -13,6 +13,12 @@
       "require": "./dist/index.cjs"
     }
   },
+  "files": [
+    "dist/**/*",
+    "package.json",
+    "README_ZH.md",
+    "README.md"
+  ],
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm run clean && tsup",
