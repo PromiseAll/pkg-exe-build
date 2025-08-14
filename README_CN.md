@@ -54,7 +54,10 @@ npx pkge -e ./index.js -o ./build/我的酷应用.exe
 | `--app-version`    | 应用程序的版本。                                                                | 否     | None             | `2.4.2`                                |
 | `-i, --icon`       | 应用程序的 .ico 格式图标路径。                                                  | 否     | Node.js 图标     | `./assets/icon.ico`                    |
 | `-l, --execution-level` | 应用程序的执行级别。                                                      | 否     | `asInvoker`      | `asInvoker`                            |
-| `--properties`     | 可执行文件的元数据 (JSON 格式)。                                                | 否     | None             | `'{"FileDescription":"我的酷应用"}'`   |
+| `--properties.FileDescription` | 可执行文件的描述。                                            | 否     | None             | `"我的酷应用"`                         |
+| `--properties.ProductName` | 产品名称。                                                      | 否     | None             | `"我的酷应用"`                         |
+| `--properties.LegalCopyright` | 版权信息。                                                  | 否     | None             | `"我的酷应用 © 2023"`                  |
+| `--properties.OriginalFilename` | 原始文件名。                                            | 否     | None             | `"我的酷应用.exe"`                     |
 
 ### 命令行示例
 
@@ -75,7 +78,10 @@ npx pkge \
   --app-version 2.4.2 \
   -i ./assets/icon.ico \
   -l asInvoker \
-  --properties '{"FileDescription":"我的酷应用","ProductName":"我的酷应用","LegalCopyright":"PromiseAll https://github.com/PromiseAll","OriginalFilename":"我的酷应用.exe"}'
+  --properties.FileDescription "我的酷应用" \
+  --properties.ProductName "我的酷应用" \
+  --properties.LegalCopyright "我的酷应用 © 2023" \
+  --properties.OriginalFilename "我的酷应用.exe"
 ```
 
 ## 基本用法

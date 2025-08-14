@@ -54,7 +54,10 @@ npx pkge -e ./index.js -o ./build/My Cool App.exe
 | `--app-version`   | Version of the application.                                                   | No       | None               | `2.4.2`                                   |
 | `-i, --icon`      | Path to the application's icon in .ico format.                                | No       | Node.js icon       | `./assets/icon.ico`                       |
 | `-l, --execution-level` | Execution level for the application.                                          | No       | `asInvoker`        | `asInvoker`                               |
-| `--properties`    | Metadata for the executable file (JSON format).                               | No       | None               | `'{"FileDescription":"My Cool App"}'`    |
+| `--properties.FileDescription` | Description of the executable.                               | No       | None               | `"My Cool App"`                          |
+| `--properties.ProductName` | Product name.                                                      | No       | None               | `"My Cool App"`                          |
+| `--properties.LegalCopyright` | Copyright information.                                          | No       | None               | `"My Cool App © 2023"`                   |
+| `--properties.OriginalFilename` | Original filename.                                            | No       | None               | `"My Cool App.exe"`                      |
 
 ### Command Line Examples
 
@@ -75,7 +78,10 @@ npx pkge \
   --app-version 2.4.2 \
   -i ./assets/icon.ico \
   -l asInvoker \
-  --properties '{"FileDescription":"My Cool App","ProductName":"My Cool App","LegalCopyright":"PromiseAll https://github.com/PromiseAll","OriginalFilename":"My Cool App.exe"}'
+  --properties.FileDescription "My Cool App" \
+  --properties.ProductName "My Cool App" \
+  --properties.LegalCopyright "My Cool App © 2023" \
+  --properties.OriginalFilename "My Cool App.exe"
 ```
 
 ## Basic Usage
